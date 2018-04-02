@@ -1,0 +1,32 @@
+{
+  "name": "daisy-slack",
+  "version": "0.0.1",
+  "description": "Daisy OAuth handshake with slack",
+  "main": "app.js",
+  "dependencies": {
+    "node-fetch": "^2.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauramosher/daisy-slack.git"
+  },
+  "keywords": [
+    "daisy",
+    "slack",
+    "node",
+    "oauth"
+  ],
+  "author": "Laura Mosher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lauramosher/daisy-slack/issues"
+  },
+  "homepage": "https://github.com/lauramosher/daisy-slack#readme",
+  "scripts": {
+    "start": "node app.js"
+  }
+}

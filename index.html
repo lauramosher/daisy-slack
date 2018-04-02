@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <title>Daisy Slack</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:300" rel="stylesheet" type="font">
+    <style type="text/css">
+      body {
+        height: 100vh;
+        background: rgba(3,76,145,1);
+        background: -moz-linear-gradient(top, rgba(3,76,145,1) 0%, rgba(0,204,255,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(3,76,145,1)), color-stop(100%, rgba(0,204,255,1)));
+        background: -webkit-linear-gradient(top, rgba(3,76,145,1) 0%, rgba(0,204,255,1) 100%);
+        background: -o-linear-gradient(top, rgba(3,76,145,1) 0%, rgba(0,204,255,1) 100%);
+        background: -ms-linear-gradient(top, rgba(3,76,145,1) 0%, rgba(0,204,255,1) 100%);
+        background: linear-gradient(to bottom, rgba(3,76,145,1) 0%, rgba(0,204,255,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#034c91', endColorstr='#00ccff', GradientType=0 );
+
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        color: white;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-weight: 300;
+      }
+
+      main {
+        margin-top: 20vh;
+      }
+
+      div {
+        margin-top: 20vh;
+      }
+
+      #code {
+        font-family: 'Roboto Mono', monospace;
+        padding: 10px 15px;
+        margin: 10px 0;
+        background-color: rgba(0, 0, 0, .35);
+        border-radius: 50px 0 0 50px;
+      }
+
+      .codeBtn {
+        font-family: 'Roboto Mono', monospace;
+        padding: 10px 10px 10px 0;
+        margin: 10px 0;
+        background-color: rgba(0, 0, 0, .35);
+        border-radius: 0 50px 50px 0;
+      }
+
+      .copyBtn {
+        border: none;
+        border-radius: 50px;
+        padding: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <h1>You've successfully authorized Daisy with Slack!</h1>
+        <span id="code">
+        </span>
+        <span class="codeBtn">
+          <button class="copyBtn">
+            Copy
+          </button>
+        </span>
+
+        <div>
+          <h1>Now, add your token to your env:</h1>
+
+          <code>export DAISY_SLACK_USER_TOKEN=</code>
+        </div>
+      </section>
+    </main>
+
+    <script type="application/javascript">
+    var url = new URL(window.location);
+    var code = url.searchParams.get("code");
+
+    var div = document.getElementById("code");
+    div.prepend(code);
+
+    document.querySelector("code").append(code);
+
+    var copyCode = document.querySelector(".copyBtn");
+
+    copyCode.addEventListener("click", function(e) {
+      var code = document.querySelector("#code");
+      var range = document.createRange();
+      range.selectNode(code);
+      window.getSelection().addRange(range);
+
+      try {
+        var cmd = document.execCommand("copy");
+        copyCode.innerHTML = "Copied!";
+      } catch(err) {
+        console.log("unable to copy");
+      }
+
+      window.getSelection().removeRange(range);
+    });
+    </script>
+  </body>
+</html>
