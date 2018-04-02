@@ -14,8 +14,7 @@ const server = http.createServer(async function(req, res) {
     var params = Object.assign(
       {
         client_id: process.env.CLIENT_ID,
-        client_secret: process.env.CLIENT_SECRET,
-        redirect_uri: "https://daisy-slack.herokuapp.com/"
+        client_secret: process.env.CLIENT_SECRET
       },
       qp
     )
