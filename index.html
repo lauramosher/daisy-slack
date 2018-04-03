@@ -67,6 +67,7 @@
         <span id="code">
         </span>
         <span class="codeBtn">
+          {{token}}
           <button class="copyBtn">
             Copy
           </button>
@@ -75,20 +76,12 @@
         <div>
           <h1>Now, add your token to your env:</h1>
 
-          <code>export DAISY_SLACK_USER_TOKEN=</code>
+          <code>export DAISY_SLACK_USER_TOKEN={{token}}</code>
         </div>
       </section>
     </main>
 
     <script type="application/javascript">
-    var url = new URL(window.location);
-    var code = url.searchParams.get("code");
-
-    var div = document.getElementById("code");
-    div.prepend(code);
-
-    document.querySelector("code").append(code);
-
     var copyCode = document.querySelector(".copyBtn");
 
     copyCode.addEventListener("click", function(e) {

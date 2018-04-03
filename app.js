@@ -27,11 +27,13 @@ const server = http.createServer(async function(req, res) {
       return
     }
 
-    fs.readFile("./index.html", function(error, body) {
+    fs.readFile("./index.html", "utf8", function(error, contents) {
       if (error) {
         res.end(error);
         return
       }
+
+      var body = contents.replace(/{{token}}/g, json.access_token);
 
       res.write(body);
       res.end();
