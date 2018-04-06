@@ -3,7 +3,7 @@
 <html>
   <head>
     <title>Daisy Slack</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:300" rel="stylesheet" type="font">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300|400" rel="stylesheet" type="font">
     <style type="text/css">
       body {
         height: 100vh;
@@ -23,8 +23,12 @@
         overflow: hidden;
       }
 
-      h1 {
+      h1, h2, h3 {
         font-weight: 300;
+      }
+
+      h1 {
+        font-size: 4em;
       }
 
       main {
@@ -45,6 +49,14 @@
         <p>Daisy integrates with Slack to offer the best remote team experience.</p>
 
         <p>
+          <h2>Install</h2>
+          <code>
+            bash <(curl -sL https://raw.githubusercontent.com/lauramosher/daisy/master/install.sh)
+          </code>
+        </p>
+
+        <p>
+          <h2>Or</h2>
           <a href="https://slack.com/oauth/authorize?client_id=2156327032.337868849991&scope=emoji:read,users.profile:write,users:write,chat:write:user"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
         </p>
       </section>

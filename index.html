@@ -59,7 +59,6 @@
       .copyBtn:hover {
         background-color: rgba(0,204,255,1);
       }
-
     </style>
   </head>
 
@@ -73,7 +72,18 @@
         </button>
 
         <div>
-          <p>Copy your User Access Token.</p><p>Go back to your Terminal and enter token when prompted during installation.</p>
+          <p>Copy your User Access Token.</p>
+          <p>If you came here via the install script, go back to your Terminal and enter token when prompted during installation.</p>
+          <p>
+            If you arrived here from an Add to Slack button, add the following lines to your bash or zsh file:
+          </p>
+          <p>
+            <code>
+              export DAISY_SLACK_USER_TOKEN={{token}}
+              <br>
+              export DAISY_SLACK_TOKEN=slackchannelname
+            </code>
+          </p>
         </div>
       </section>
     </main>
